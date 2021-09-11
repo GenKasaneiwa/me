@@ -32,10 +32,10 @@
       <!-- マーカートラック用-->
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
       <!-- クリック用-->
-      <!-- <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
-      </script> -->
+      <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
+      </script>
       <!-- particle用-->
-      <!-- <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> -->
+      <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
       <!-- gltfアニメーション用 -->
       <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
       <script>
@@ -75,7 +75,7 @@
    <body>
       <div id="loader" class="loader">
          <div class="loader__wrapper">
-            <p class="loader__para">please hold your phone up to the marker1
+            <p class="loader__para">please hold your phone up to the marker
             </p>
             <img class="loader__img" src="https://genkasaneiwa.github.io/me/assets/img/marker.png" alt="marker">
             <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
@@ -89,6 +89,8 @@
          <a-assets>
            <a-asset-item id="me" src="https://genkasaneiwa.github.io/me/assets/img/model/gltf/me.gltf"></a-asset-item>
          </a-assets>
+         <!-- ライトをいれるとデフォルトからこの設定に書き換わる -->
+         <a-light type="ambient" color="#fff"></a-light>
 
          <!--マーカー用 https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html-->
          <a-marker type="pattern" url="https://genkasaneiwa.github.io/me/assets/img/marker/marker.patt" registerevents>
@@ -102,11 +104,11 @@
             </a-image> -->
 
             <a-entity   
-               position="0 0 1"
-               rotation="-90 0 0"
+               position="0 0 0"
+               rotation="0 0 0"
                gltf-model="#me"
-               scale="10 10 10"
-               animation-mixer="loop:once"
+               scale="100 100 100"
+               animation-mixer
             ></a-entity>
 
             <!-- animation="property: rotation; to: 0 10000 0; loop: true; dur: 500000;" -->
