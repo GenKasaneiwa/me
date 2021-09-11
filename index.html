@@ -36,6 +36,8 @@
       </script>
       <!-- particle用-->
       <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js">
+      // gltfアニメーション用
+      <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
       </script>
       <script>
          AFRAME.registerComponent("registerevents", {
@@ -74,9 +76,9 @@
    <body>
       <div id="loader" class="loader">
          <div class="loader__wrapper">
-            <p class="loader__para">please hold your phone up to the marker1
+            <p class="loader__para">please hold your phone up to the marker
             </p>
-            <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker.png" alt="marker">
+            <img class="loader__img" src="https://genkasaneiwa.github.io/me/assets/img/marker.png" alt="marker">
             <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
          </div>
          <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
@@ -86,11 +88,12 @@
          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
          <a-assets>
-           <a-asset-item id="fluff" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/model/gltf/fluff.gltf"></a-asset-item>
+           <a-asset-item id="me" src="https://genkasaneiwa.github.io/me/assets/img/model/gltf/me.gltf"></a-asset-item>
          </a-assets>
 
          <!--マーカー用 https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html-->
-         <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker.patt" registerevents>
+         <a-marker type="pattern" url="https://genkasaneiwa.github.io/me/assets/img/marker/marker.patt" registerevents>
+            
             <!-- <a-image id="target" src="" 
                height="2" 
                width="3"
@@ -102,7 +105,7 @@
             <a-entity   
                position="0 0 1"
                rotation="-90 0 0"
-               gltf-model="#fluff"
+               gltf-model="#me"
                scale="2 2 2"
             >
 
